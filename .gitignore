@@ -1,0 +1,9 @@
+env/
+
+*~
+*.py[a-z]
+*.sw[a-z]
+
+# Mac OSX
+\.DS_Store
+\.DS_Store?
