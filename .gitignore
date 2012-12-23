@@ -1,9 +1,13 @@
+# Virtualenv & project local stuff
 env/
+ganga/local_settings.py
 
+# Editors
 *~
 *.py[a-z]
 *.sw[a-z]
+\.dir-locals.el
 
-# Mac OSX
+# Mac OS X
 \.DS_Store
 \.DS_Store?

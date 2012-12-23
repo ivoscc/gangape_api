@@ -1,7 +1,12 @@
 Flask==0.9
+Flask-SQLAlchemy==0.16
+GeoAlchemy==0.7.1
 Jinja2==2.6
+SQLAlchemy==0.8.0b2
 Werkzeug==0.8.3
-psycopg2==2.4.5
-redis==2.6.0
-simplejson==2.6.1
+distribute==0.6.28
+matplotlib==1.2.x
+psycopg2==2.4.6
+simplejson==2.6.2
 wsgiref==0.1.2
+cdecimal==2.3
