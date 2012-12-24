@@ -7,6 +7,7 @@ from geoalchemy import GeometryColumn, Point
 
 
 class User(db.Model):
+    __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.Text, unique=True)
     password = db.Column(db.Text)
@@ -16,13 +17,18 @@ class User(db.Model):
         self.password = password
 
     def __unicode__(self):
-        return u"%s<%s>" % (self.name, self.email)
+        return u"%s<%s>" % (self.id, self.email)
 
-class Products(db.Model):
+    @property
+    def as_json(self):
+        return {'email': self.email, }
+
+class Product(db.Model):
+    __tablename__ = "products"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
     location = GeometryColumn(Point(2))
-    owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    owner_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     owner = db.relationship('User',
                             backref=db.backref('owner', lazy='dynamic'))
 

@@ -1,0 +1,6 @@
+language: python
+python:
+  - "2.7"
+  - "pypy"
+install: python pip install -r REQUIREMENTS-test.txt --use-mirrors
+script: python tests/views.py
